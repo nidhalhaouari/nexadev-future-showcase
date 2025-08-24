@@ -53,7 +53,7 @@ const translations = {
     'contact.form.company': 'Company',
     'contact.form.message': 'Message',
     'contact.form.send': 'Send Message',
-    'contact.email': 'contact@nexadev.com',
+    'contact.email': 'nexadevcontact@gmail.com',
   },
   fr: {
     // Navigation
@@ -99,7 +99,7 @@ const translations = {
     'contact.form.company': 'Entreprise',
     'contact.form.message': 'Message',
     'contact.form.send': 'Envoyer le Message',
-    'contact.email': 'contact@nexadev.com',
+    'contact.email': 'nexadevcontact@gmail.com',
   }
 };
 

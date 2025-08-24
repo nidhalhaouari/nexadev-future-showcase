@@ -52,9 +52,9 @@ export function About() {
   ];
 
   const stats = [
-    { icon: Users, number: '50+', label: 'Happy Clients' },
-    { icon: Award, number: '100+', label: 'Projects Completed' },
-    { icon: Zap, number: '5+', label: 'Years Experience' },
+    { icon: Users, number: '20+', label: 'Happy Clients' },
+    { icon: Award, number: '80+', label: 'Projects Completed' },
+    { icon: Zap, number: '2+', label: 'Years Experience' },
     { icon: Target, number: '99%', label: 'Success Rate' }
   ];
 

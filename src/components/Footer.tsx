@@ -21,7 +21,7 @@ export function Footer() {
     { icon: Github, href: '#', label: 'GitHub' },
     { icon: Linkedin, href: '#', label: 'LinkedIn' },
     { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Mail, href: 'mailto:contact@nexadev.com', label: 'Email' }
+    { icon: Mail, href: 'mailto:nexadevcontact@gmail.com', label: 'Email' }
   ];
 
   const scrollToSection = (sectionId: string) => {
@@ -43,11 +43,7 @@ export function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <img 
-                src="/lovable-uploads/5743d107-80ba-41c0-82e8-356d919c7eb9.png" 
-                alt="NEXADEV" 
-                className="h-8 w-auto brightness-0 invert"
-              />
+    
             </div>
             <p className="text-primary-foreground/80 leading-relaxed">
               Building the future with innovative web, mobile, and AI solutions. 
@@ -105,9 +101,9 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="text-lg font-bold">Contact</h4>
             <div className="space-y-2 text-primary-foreground/80">
-              <p>contact@nexadev.com</p>
-              <p>+1 (555) 123-4567</p>
-              <p>San Francisco, CA</p>
+              <p>nexadevcontact@gmail.com</p>
+              <p>+216 29 897 262 </p>
+              <p>Menzeltmime,Nabeul</p>
             </div>
           </div>
         </div>

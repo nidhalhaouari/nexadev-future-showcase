@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
 
 export function Contact() {
   const { t } = useLanguage();
@@ -47,20 +48,35 @@ export function Contact() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+ const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Message sent successfully!",
-        description: "We'll get back to you as soon as possible.",
-      });
-      setFormData({ name: '', email: '', company: '', message: '' });
-      setIsSubmitting(false);
-    }, 1000);
-  };
+  try {
+    await emailjs.send(
+      'service_4vw4q9i',   // remplace par ton Service ID EmailJS
+      'template_0jn0wjk',  // remplace par ton Template ID EmailJS
+      formData,            // objet avec {name, email, company, message}
+      '_8T-0zc8b1dGbDcqa'    // remplace par ta Public Key EmailJS
+    );
+
+    toast({
+      title: "Message sent successfully!",
+      description: "We'll get back to you as soon as possible.",
+    });
+
+    setFormData({ name: '', email: '', company: '', message: '' });
+  } catch (error) {
+    console.error(error);
+    toast({
+      title: "Error sending message",
+      description: "Please try again later.",
+    });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
 
   const contactInfo = [
     {
@@ -72,13 +88,13 @@ export function Contact() {
     {
       icon: Phone,
       title: 'Phone',
-      value: '+1 (555) 123-4567',
-      link: 'tel:+15551234567'
+      value: '+216 29 897 262 ',
+      link: 'tel:+21629897262'
     },
     {
       icon: MapPin,
       title: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Menzeltmime,Nabeul',
       link: '#'
     }
   ];
@@ -184,9 +200,9 @@ export function Contact() {
                 
                 <div>
                   <Input
-                    type="text"
+                    type="tel"
                     name="company"
-                    placeholder={t('contact.form.company')}
+                    placeholder="phonr number"
                     value={formData.company}
                     onChange={handleInputChange}
                     className="h-12"
